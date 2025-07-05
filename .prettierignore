@@ -32,3 +32,11 @@ Thumbs.db
 # その他
 *.min.js
 *.min.css
+astro.config.mjs
+eslint.config.mjs
+package.json
+prettier.config.mjs
+README.md
+stylelint.config.mjs
+tsconfig.json
+.prettierignore

@@ -24,7 +24,4 @@ export default {
       },
     },
   ],
-
-  // 無視するファイル
-  ignorePath: ".prettierignore",
 };
