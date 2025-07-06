@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:astro": "markuplint \"**/*.astro\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
+    "@markuplint/astro-parser": "^4.6.19",
     "@typescript-eslint/eslint-plugin": "^8.35.1",
     "@typescript-eslint/parser": "^8.35.1",
     "astro-eslint-parser": "^1.2.2",
@@ -23,6 +25,7 @@
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "markuplint": "^4.12.0",
     "postcss-html": "^1.8.0",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
