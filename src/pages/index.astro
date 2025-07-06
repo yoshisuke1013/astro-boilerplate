@@ -1,5 +1,12 @@
 ---
-
+import type { Hoge } from "../types/index";
+import "../styles/global.css";
+const isRed = true;
+const foregroundColor = "rgb(221 243 228)";
+const backgroundColor = "rgb(24 121 78)";
+const hogehoge: Hoge = {
+	hoge: "hogehoge",
+};
 ---
 
 <html lang="en">
@@ -11,6 +18,57 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<article class="flex justify-center">
+			<h1 class:list={["box", { red: isRed }]}>Astro {hogehoge.hoge}</h1>
+		</article>
 	</body>
 </html>
+<!-- 
+<style>
+	h1 {
+		color: red;
+	}
+</style>
+
+<style is:global>
+	/* スコープされず、ブラウザにそのまま配信されます。
+    サイト内のすべての<h1>タグに適用されます。*/
+	h1 {
+		font-size: medium;
+	}
+</style>
+
+<style>
+	/* スコープされ、このコンポーネントに対してのみ適用される。 */
+	h1 {
+		text-decoration: underline;
+	}
+	/* グローバルが混在、子要素の`h1`にのみ適用されます。*/
+	article :global(h1):hover {
+		color: blue;
+	}
+</style>
+
+<style>
+	.box {
+		border: 1px solid blue;
+	}
+	.red {
+		border-color: red;
+	}
+</style> -->
+
+<style define:vars={{ foregroundColor, backgroundColor }}>
+	h1 {
+		background-color: var(--backgroundColor);
+		color: var(--foregroundColor);
+	}
+</style>
+
+<style lang="scss">
+	h1 {
+		& {
+			text-decoration: underline;
+		}
+	}
+</style>
