@@ -1,47 +1,127 @@
-# Astro Starter Kit: Minimal
+# Astro Boilerplate
 
-```sh
-pnpm create astro@latest -- --template minimal
+モダンなWebサイト構築のためのAstroベースのボイラープレートです。TypeScript、Tailwind CSS、Sass、そして包括的なコード品質管理ツールを統合しています。
+
+## 🚀 特徴
+
+- **⚡ Astro 5.11.0** - 高速な静的サイトジェネレーター
+- **🎨 Tailwind CSS 4.1.11** - ユーティリティファーストのCSSフレームワーク
+- **📝 TypeScript** - 型安全性と開発体験の向上
+- **💅 Sass** - 高度なCSS機能と変数管理
+- **🔧 包括的な開発ツール**
+  - ESLint - JavaScript/TypeScriptの静的解析
+  - Prettier - コードフォーマッター
+  - Stylelint - CSS/SCSSの静的解析
+  - Markuplint - HTML/Astroファイルの検証
+
+## 📋 必要条件
+
+- Node.js 18.0.0以上
+- pnpm（推奨）またはnpm
+
+## 🛠️ セットアップ
+
+1. **リポジトリのクローン**
+   ```bash
+   git clone <repository-url>
+   cd astro-boilerplate
+   ```
+
+2. **依存関係のインストール**
+   ```bash
+   pnpm install
+   ```
+
+3. **開発サーバーの起動**
+   ```bash
+   pnpm dev
+   ```
+
+   開発サーバーは `http://localhost:4321` で起動します。
+
+## 📜 利用可能なスクリプト
+
+| スクリプト | 説明 |
+|-----------|------|
+| `pnpm dev` | 開発サーバーを起動 |
+| `pnpm build` | 本番用ビルドを作成 |
+| `pnpm preview` | ビルドされたサイトをプレビュー |
+| `pnpm astro` | Astro CLIコマンドを実行 |
+| `pnpm lint:astro` | Astroファイルのマークアップ検証 |
+
+## 🏗️ プロジェクト構造
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+astro-boilerplate/
+├── public/              # 静的アセット
+│   └── favicon.svg
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── pages/           # ページコンポーネント
+│   │   └── index.astro
+│   ├── styles/          # グローバルスタイル
+│   │   └── global.css
+│   └── types/           # TypeScript型定義
+│       └── index.ts
+├── astro.config.mjs     # Astro設定
+├── eslint.config.mjs    # ESLint設定
+├── prettier.config.mjs  # Prettier設定
+├── stylelint.config.mjs # Stylelint設定
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎨 スタイリング
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+このプロジェクトでは以下のスタイリング手法を組み合わせて使用しています：
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Tailwind CSS
+- ユーティリティクラスによる高速なスタイリング
+- レスポンシブデザインのサポート
+- カスタムカラーパレットとテーマ
 
-## 🧞 Commands
+### Sass
+- 変数、ミックスイン、ネスト機能
+- モジュラーなCSSアーキテクチャ
+- 高度なスタイル管理
 
-All commands are run from the root of the project, from a terminal:
+### Astroのスタイル機能
+- コンポーネントスコープのスタイル
+- CSS変数の動的注入
+- グローバルスタイルの管理
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 🔧 開発ツール
 
-## 👀 Want to learn more?
+### ESLint
+- TypeScriptとAstroファイルの静的解析
+- 未使用インポートの自動削除
+- インポート順序の自動整理
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Prettier
+- 一貫したコードフォーマット
+- Astroファイルの専用サポート
+- チーム開発での統一されたスタイル
+
+### Stylelint
+- CSS/SCSSの品質チェック
+- Tailwind CSSのサポート
+- プロパティ順序の自動整理
+
+### Markuplint
+- HTML/Astroファイルの構文チェック
+- アクセシビリティの検証
+- セマンティックなマークアップの確認
+
+## 📦 依存関係
+
+### 本番依存関係
+- `astro` - 静的サイトジェネレーター
+- `@tailwindcss/vite` - Tailwind CSS Viteプラグイン
+- `tailwindcss` - CSSフレームワーク
+- `sass` - CSSプリプロセッサ
+
+### 開発依存関係
+- `@eslint/js` - ESLint JavaScript設定
+- `@typescript-eslint/*` - TypeScript ESLintプラグイン
+- `eslint-plugin-astro` - Astro ESLintプラグイン
+- `prettier` - コードフォーマッター
+- `stylelint` - CSSリンター
+- `markuplint` - マークアップリンター
